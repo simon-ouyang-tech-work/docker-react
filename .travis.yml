@@ -8,4 +8,4 @@ before_install: #before the test is ran.
   - docker build -t simon/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run simon/docker-react npm run test -- --coverage
+  - docker run -e CI=true simon/docker-react npm run test
